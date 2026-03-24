@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Leo's Health - Family Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=Outfit:wght@300;400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#abf4ac",
+              "on-secondary-container": "#2e7238",
+              "surface-tint": "#006a63",
+              "tertiary-fixed-dim": "#ffb59b",
+              "inverse-surface": "#2b3231",
+              "on-primary-fixed-variant": "#00504a",
+              "surface-container-lowest": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-surface": "#161d1c",
+              "on-background": "#161d1c",
+              "tertiary-container": "#ea8e6d",
+              "inverse-primary": "#71d7cd",
+              "primary-fixed": "#8ef4e9",
+              "outline": "#6d7a77",
+              "tertiary": "#94492d",
+              "error-container": "#ffdad6",
+              "secondary": "#286b33",
+              "on-error": "#ffffff",
+              "outline-variant": "#bdc9c6",
+              "secondary-fixed-dim": "#90d792",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "secondary-fixed": "#abf4ac",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed": "#002107",
+              "primary-container": "#4db6ac",
+              "surface-container-low": "#eef5f3",
+              "tertiary-fixed": "#ffdbcf",
+              "on-tertiary-fixed-variant": "#763219",
+              "surface-container": "#e8efed",
+              "background": "#f4fbf9",
+              "on-tertiary-fixed": "#380d00",
+              "surface-bright": "#f4fbf9",
+              "on-surface-variant": "#3d4947",
+              "error": "#ba1a1a",
+              "primary": "#006a63",
+              "surface-variant": "#dde4e2",
+              "surface-dim": "#d4dbda",
+              "on-secondary-fixed-variant": "#07521d",
+              "surface-container-high": "#e3eae8",
+              "primary-fixed-dim": "#71d7cd",
+              "on-primary-fixed": "#00201d",
+              "inverse-on-surface": "#ebf2f0",
+              "surface": "#f4fbf9",
+              "on-tertiary-container": "#67280e",
+              "on-primary-container": "#00433f",
+              "surface-bottom-nav": "#f4fbf9",
+              "on-surface-bottom-nav": "#006a63"
+            },
+            fontFamily: {
+              "headline": ["Fraunces", "serif"],
+              "body": ["Outfit", "sans-serif"],
+              "label": ["Outfit", "sans-serif"],
+              "brand": ["Fraunces", "serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+      }
+      .editorial-shadow {
+        box-shadow: 0 10px 40px -10px rgba(0, 106, 99, 0.08);
+      }
+      .asymmetric-bleed {
+        margin-left: -1.5rem;
+        padding-left: 1.5rem;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col">
+<!-- TopAppBar - Shared Component Logic Applied -->
+<header class="flex justify-between items-center w-full px-6 py-4 backdrop-blur-md sticky top-0 z-50 bg-[#f4fbf9]/80 dark:bg-teal-950/20">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container transition-colors Active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline text-2xl font-semibold leading-tight text-primary">Leo's Health</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-variant border-2 border-primary/10">
+<img alt="Family Member Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a smiling young boy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1KMSptuGrGPo9R2wEIZMmOkbRhxncSb82B6Cd1zw7tWRgU6T3CW9FjtTz2d7BjKMjsSB4Co3Bt_t8iK2uHpFW2OwmcjmGG7bpAiLpK1B2DIZgD31nZTaBOPSLNRpD9CsZwk9obQSfySg2sbMkWXboQn83u-4JwWM3O8w2HCwA-c1ADDGH5KD6QYYjl_8-dymjQzwQx7hc9FgTpo9KUpFt_8w5KTueIOlttBt6XaAP33qmwCvmM5zaKcrcS7iHFoLRifXGL5nuGso"/>
+</div>
+<span class="material-symbols-outlined text-primary transition-opacity hover:opacity-80">notifications</span>
+</div>
+</header>
+<main class="flex-1 px-6 pb-32">
+<!-- Tab Group -->
+<div class="mt-6 flex justify-center">
+<div class="inline-flex p-1.5 bg-surface-container-high rounded-full w-full max-w-sm">
+<button class="flex-1 py-3 px-6 rounded-full bg-primary text-on-primary font-label font-semibold text-sm transition-all duration-300 shadow-lg shadow-primary/20">
+                    Vitals
+                </button>
+<button class="flex-1 py-3 px-6 rounded-full text-on-surface-variant font-label font-medium text-sm hover:bg-surface-container transition-all duration-200">
+                    History
+                </button>
+</div>
+</div>
+<!-- Vital Statistics (Editorial Asymmetric Layout) -->
+<div class="mt-10 space-y-8">
+<!-- Temperature Card -->
+<div class="bg-surface-container-lowest rounded-xl p-8 editorial-shadow relative overflow-hidden">
+<div class="flex justify-between items-start relative z-10">
+<div>
+<span class="text-on-surface-variant font-label text-xs tracking-widest uppercase mb-1 block">Body Temperature</span>
+<div class="flex items-baseline gap-1">
+<h2 class="font-headline text-5xl font-bold text-primary">98.4</h2>
+<span class="text-primary-container font-headline text-xl">°F</span>
+</div>
+</div>
+<div class="bg-secondary-container/30 px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-sm">trending_up</span>
+<span class="text-secondary font-label text-xs font-bold">NORMAL</span>
+</div>
+</div>
+<!-- Custom Trend Chart Visualization -->
+<div class="mt-8 h-32 w-full flex items-end gap-1 relative">
+<!-- Decorative Cubic Bezier Path Representation -->
+<svg class="absolute bottom-0 left-0 w-full h-full overflow-visible" viewbox="0 0 400 100">
+<path d="M0,80 C50,75 80,40 120,45 S180,90 240,85 S320,20 400,30" fill="none" stroke="url(#gradient-teal)" stroke-linecap="round" stroke-width="4"></path>
+<defs>
+<lineargradient id="gradient-teal" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" style="stop-color:#4db6ac;stop-opacity:0.2"></stop>
+<stop offset="100%" style="stop-color:#006a63;stop-opacity:1"></stop>
+</lineargradient>
+</defs>
+<!-- Data Points -->
+<circle cx="120" cy="45" fill="#006a63" r="4"></circle>
+<circle cx="240" cy="85" fill="#006a63" r="4"></circle>
+<circle class="animate-pulse" cx="400" cy="30" fill="#006a63" r="6"></circle>
+</svg>
+</div>
+<div class="mt-4 flex justify-between text-[10px] font-label text-outline-variant tracking-wider">
+<span>MON</span>
+<span>TUE</span>
+<span>WED</span>
+<span>THU</span>
+<span>FRI</span>
+<span>SAT</span>
+<span class="text-primary font-bold">TODAY</span>
+</div>
+</div>
+<!-- Weight Card -->
+<div class="bg-surface-container-lowest rounded-xl p-8 editorial-shadow relative overflow-hidden">
+<div class="flex justify-between items-start relative z-10">
+<div>
+<span class="text-on-surface-variant font-label text-xs tracking-widest uppercase mb-1 block">Current Weight</span>
+<div class="flex items-baseline gap-1">
+<h2 class="font-headline text-5xl font-bold text-primary">42.5</h2>
+<span class="text-primary-container font-headline text-xl">lbs</span>
+</div>
+</div>
+<div class="bg-primary-fixed/20 px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm">balance</span>
+<span class="text-primary font-label text-xs font-bold">+1.2 lbs</span>
+</div>
+</div>
+<!-- Custom Trend Chart Visualization -->
+<div class="mt-8 h-32 w-full flex items-end gap-1 relative">
+<svg class="absolute bottom-0 left-0 w-full h-full overflow-visible" viewbox="0 0 400 100">
+<path class="opacity-30" d="M0,90 C40,85 100,70 150,65 S250,55 300,50 S360,20 400,15" fill="none" stroke="#4db6ac" stroke-dasharray="1 8" stroke-linecap="round" stroke-width="4"></path>
+<path d="M0,95 C60,90 120,80 180,85 S280,75 350,60 S380,45 400,40" fill="none" stroke="url(#gradient-teal-solid)" stroke-linecap="round" stroke-width="5"></path>
+<defs>
+<lineargradient id="gradient-teal-solid" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" style="stop-color:#4db6ac;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#006a63;stop-opacity:1"></stop>
+</lineargradient>
+</defs>
+<circle cx="400" cy="40" fill="#006a63" r="6"></circle>
+</svg>
+</div>
+<div class="mt-4 flex justify-between text-[10px] font-label text-outline-variant tracking-wider uppercase">
+<span>Oct 12</span>
+<span>Oct 19</span>
+<span>Oct 26</span>
+<span class="text-primary font-bold">NOV 02</span>
+</div>
+</div>
+<!-- Health Summary (Bento Style Sub-component) -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-high/50 p-6 rounded-xl flex flex-col justify-between aspect-square">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">ecg_heart</span>
+<div>
+<p class="text-on-surface-variant font-label text-xs">Heart Rate</p>
+<p class="font-headline text-2xl font-bold text-on-surface">78 <span class="text-sm font-normal text-outline">bpm</span></p>
+</div>
+</div>
+<div class="bg-primary/5 p-6 rounded-xl flex flex-col justify-between aspect-square border border-primary/10">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">bedtime</span>
+<div>
+<p class="text-on-surface-variant font-label text-xs">Sleep Quality</p>
+<p class="font-headline text-2xl font-bold text-on-surface">8.5 <span class="text-sm font-normal text-outline">hrs</span></p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-28 right-6 w-16 h-16 bg-primary-container text-on-primary-container rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all z-40">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<!-- BottomNavBar - Shared Component Implementation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 backdrop-blur-xl bg-[#f4fbf9]/85 dark:bg-teal-950/80 rounded-t-[3rem] border-t border-[#006a63]/5 shadow-[0_-4px_40px_rgba(22,29,28,0.04)]">
+<!-- HUB (Active as this is the Health Dashboard/Hub for Leo) -->
+<a class="flex flex-col items-center justify-center bg-[#4db6ac]/20 dark:bg-[#4db6ac]/10 text-[#006a63] dark:text-[#4db6ac] rounded-full px-6 py-2 transition-all Active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['Outfit'] text-[10px] uppercase tracking-widest font-bold mt-1">HUB</span>
+</a>
+<!-- TIMELINE -->
+<a class="flex flex-col items-center justify-center text-teal-800/50 dark:text-teal-200/40 px-6 py-2 hover:text-[#006a63] dark:hover:text-[#4db6ac] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-['Outfit'] text-[10px] uppercase tracking-widest font-bold mt-1">TIMELINE</span>
+</a>
+<!-- SETTINGS -->
+<a class="flex flex-col items-center justify-center text-teal-800/50 dark:text-teal-200/40 px-6 py-2 hover:text-[#006a63] dark:hover:text-[#4db6ac] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Outfit'] text-[10px] uppercase tracking-widest font-bold mt-1">SETTINGS</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&amp;family=Outfit:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,600&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#abf4ac",
+              "on-secondary-container": "#2e7238",
+              "surface-tint": "#006a63",
+              "tertiary-fixed-dim": "#ffb59b",
+              "inverse-surface": "#2b3231",
+              "on-primary-fixed-variant": "#00504a",
+              "surface-container-lowest": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-surface": "#161d1c",
+              "on-background": "#161d1c",
+              "tertiary-container": "#ea8e6d",
+              "inverse-primary": "#71d7cd",
+              "primary-fixed": "#8ef4e9",
+              "outline": "#6d7a77",
+              "tertiary": "#94492d",
+              "error-container": "#ffdad6",
+              "secondary": "#286b33",
+              "on-error": "#ffffff",
+              "outline-variant": "#bdc9c6",
+              "secondary-fixed-dim": "#90d792",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "secondary-fixed": "#abf4ac",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed": "#002107",
+              "primary-container": "#4db6ac",
+              "surface-container-low": "#eef5f3",
+              "tertiary-fixed": "#ffdbcf",
+              "on-tertiary-fixed-variant": "#763219",
+              "surface-container": "#e8efed",
+              "background": "#f4fbf9",
+              "on-tertiary-fixed": "#380d00",
+              "surface-bright": "#f4fbf9",
+              "on-surface-variant": "#3d4947",
+              "error": "#ba1a1a",
+              "primary": "#006a63",
+              "surface-variant": "#dde4e2",
+              "surface-dim": "#d4dbda",
+              "on-secondary-fixed-variant": "#07521d",
+              "surface-container-high": "#e3eae8",
+              "primary-fixed-dim": "#71d7cd",
+              "on-primary-fixed": "#00201d",
+              "inverse-on-surface": "#ebf2f0",
+              "surface": "#f4fbf9",
+              "on-tertiary-container": "#67280e",
+              "on-primary-container": "#00433f",
+              "surface-container-highest": "#dde4e2"
+            },
+            fontFamily: {
+              "headline": ["Fraunces", "serif"],
+              "body": ["Be Vietnam Pro", "sans-serif"],
+              "label": ["Outfit", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .timeline-gradient {
+        background: linear-gradient(180deg, #006a63 0%, rgba(0, 106, 99, 0.05) 100%);
+      }
+      .glass-card {
+        backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.7);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center w-full px-6 py-4 backdrop-blur-md sticky top-0 z-50 bg-[#f4fbf9]/80">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-low text-primary hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline text-2xl font-semibold leading-tight text-primary">Leo's History</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Family member profile picture of Leo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9RoueJKbPTI1WpOOu9uTK2rSdf1jzIRRrnQCjhtPhLaD-C62dgyazqZl2hRD9RthuAFGmPnUDaNZ62KIerNB3leqDn4m2kiraQjW6JQ4GpXHsgj2pO4beMMnxULa-lMNeizaNqY8nDPZhWQs6fDsJaBKblafC2xDeNrQaQ_FVp6VaU7xxOYJcve-ZtvYj7zo9-CKQwVhMdxlM_1bl95o8eggSguGAjmlsZRpTJs1ghTVTQAimLP2BqEz-oe3yXr9KHLc-Zbtkxwo"/>
+</div>
+</div>
+</header>
+<main class="flex-1 px-6 pb-32">
+<!-- Segemented Tabs -->
+<div class="flex justify-center my-8">
+<div class="bg-surface-container-high p-1.5 rounded-full flex w-full max-w-sm">
+<button class="flex-1 py-3 px-6 rounded-full text-sm font-label font-bold tracking-widest text-on-surface-variant hover:text-primary transition-colors">
+                    VITALS
+                </button>
+<button class="flex-1 py-3 px-6 rounded-full text-sm font-label font-bold tracking-widest bg-primary text-on-primary shadow-lg transition-all active:scale-95">
+                    HISTORY
+                </button>
+</div>
+</div>
+<!-- Timeline Section -->
+<div class="relative ml-4">
+<!-- Vertical Line -->
+<div class="absolute left-0 top-2 bottom-0 w-0.5 timeline-gradient"></div>
+<!-- Feed Items -->
+<div class="space-y-10 pl-10 relative">
+<!-- Timeline Node 1 -->
+<div class="relative">
+<div class="absolute -left-[45px] top-4 w-4 h-4 rounded-full bg-primary ring-8 ring-background"></div>
+<div class="text-xs font-label font-bold text-primary mb-2 tracking-widest uppercase">October 12, 2023</div>
+<div class="glass-card p-6 rounded-lg border border-outline-variant/15 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline text-xl text-on-surface mb-1">Annual Check-up</h3>
+<p class="text-sm text-on-surface-variant">St. Mary's Pediatric Wing</p>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="event_note">event_note</span>
+</div>
+<div class="bg-surface-container-low rounded-md p-3 mb-4">
+<p class="text-sm italic text-on-surface-variant">"Patient is meeting all developmental milestones. Height and weight in the 85th percentile."</p>
+</div>
+<a class="flex items-center gap-2 text-primary font-label font-bold text-sm group" href="#">
+                            VIEW PDF
+                            <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Timeline Node 2 -->
+<div class="relative">
+<div class="absolute -left-[45px] top-4 w-4 h-4 rounded-full bg-primary ring-8 ring-background"></div>
+<div class="text-xs font-label font-bold text-primary mb-2 tracking-widest uppercase">September 05, 2023</div>
+<div class="glass-card p-6 rounded-lg border border-outline-variant/15 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline text-xl text-on-surface mb-1">Blood Test Results</h3>
+<p class="text-sm text-on-surface-variant">Central Diagnostics Lab</p>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="biotech">biotech</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-4">
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="block text-[10px] text-on-surface-variant uppercase font-bold">Hemoglobin</span>
+<span class="text-on-surface font-headline">12.4 g/dL</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="block text-[10px] text-on-surface-variant uppercase font-bold">Vitamin D</span>
+<span class="text-on-surface font-headline">38 ng/mL</span>
+</div>
+</div>
+<a class="flex items-center gap-2 text-primary font-label font-bold text-sm group" href="#">
+                            VIEW PDF
+                            <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Timeline Node 3 -->
+<div class="relative">
+<div class="absolute -left-[45px] top-4 w-4 h-4 rounded-full bg-tertiary ring-8 ring-background"></div>
+<div class="text-xs font-label font-bold text-tertiary mb-2 tracking-widest uppercase">August 20, 2023</div>
+<div class="glass-card p-6 rounded-lg border border-tertiary/10 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline text-xl text-on-surface mb-1">ER Visit - Fever</h3>
+<p class="text-sm text-on-surface-variant">Children's Urgent Care</p>
+</div>
+<span class="material-symbols-outlined text-tertiary" data-icon="emergency">emergency</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">High fever (103.2°F) persisting for 12 hours. Prescribed infant acetaminophen and fluids.</p>
+<a class="flex items-center gap-2 text-primary font-label font-bold text-sm group" href="#">
+                            DISCHARGE SUMMARY
+                            <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB -->
+<button class="fixed bottom-32 right-6 w-16 h-16 rounded-full bg-primary text-on-primary shadow-[0_8px_32px_rgba(0,106,99,0.3)] flex items-center justify-center active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 backdrop-blur-xl bg-[#f4fbf9]/85 border-t border-[#006a63]/5 shadow-[0_-4px_40px_rgba(22,29,28,0.04)] rounded-t-[3rem]">
+<a class="flex flex-col items-center justify-center text-teal-800/50 hover:text-[#006a63] px-6 py-2 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="grid_view">grid_view</span>
+<span class="font-['Outfit'] text-[10px] uppercase tracking-widest font-bold">HUB</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#4db6ac]/20 text-[#006a63] rounded-full px-6 py-2 transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_stories" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-['Outfit'] text-[10px] uppercase tracking-widest font-bold">TIMELINE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-teal-800/50 hover:text-[#006a63] px-6 py-2 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-['Outfit'] text-[10px] uppercase tracking-widest font-bold">SETTINGS</span>
+</a>
+</nav>
+</body></html>

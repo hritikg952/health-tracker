@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Family Sanctuary - Teal Care Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&amp;family=Outfit:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,600&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#abf4ac",
+              "on-secondary-container": "#2e7238",
+              "surface-tint": "#006a63",
+              "tertiary-fixed-dim": "#ffb59b",
+              "inverse-surface": "#2b3231",
+              "on-primary-fixed-variant": "#00504a",
+              "surface-container-lowest": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-surface": "#161d1c",
+              "on-background": "#161d1c",
+              "tertiary-container": "#ea8e6d",
+              "inverse-primary": "#71d7cd",
+              "primary-fixed": "#8ef4e9",
+              "outline": "#6d7a77",
+              "tertiary": "#94492d",
+              "error-container": "#ffdad6",
+              "secondary": "#286b33",
+              "on-error": "#ffffff",
+              "outline-variant": "#bdc9c6",
+              "secondary-fixed-dim": "#90d792",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "secondary-fixed": "#abf4ac",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed": "#002107",
+              "primary-container": "#4db6ac",
+              "surface-container-low": "#eef5f3",
+              "tertiary-fixed": "#ffdbcf",
+              "on-tertiary-fixed-variant": "#763219",
+              "surface-container": "#e8efed",
+              "background": "#f4fbf9",
+              "on-tertiary-fixed": "#380d00",
+              "surface-bright": "#f4fbf9",
+              "on-surface-variant": "#3d4947",
+              "error": "#ba1a1a",
+              "primary": "#006a63",
+              "surface-variant": "#dde4e2",
+              "surface-dim": "#d4dbda",
+              "on-secondary-fixed-variant": "#07521d",
+              "surface-container-high": "#e3eae8",
+              "primary-fixed-dim": "#71d7cd",
+              "on-primary-fixed": "#00201d",
+              "inverse-on-surface": "#ebf2f0",
+              "surface": "#f4fbf9",
+              "on-tertiary-container": "#67280e",
+              "on-primary-container": "#00433f",
+              "surface-container-highest": "#dde4e2"
+            },
+            fontFamily: {
+              "headline": ["Fraunces", "serif"],
+              "body": ["Outfit", "sans-serif"],
+              "label": ["Outfit", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Outfit', sans-serif; }
+        h1, h2, h3 { font-family: 'Fraunces', serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-6 py-4 backdrop-blur-md sticky top-0 z-50 bg-[#f4fbf9]/80 dark:bg-teal-950/20">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Portrait of Sarah smiling professionally" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Nr3vvYt8SJzq33ZoIQO3eWl0jyAEcPRncQalgA_Fr_ylgk_c-H1mLS1QF4nmR2nEMDAR_tWn77h2juosSNx5hpJa3zdxJ02UTQ4IbWZIS9PDuc57L0DzF_VnY4mBkUDB4auFFX8pn6sMMW2IhxokiA4JNTt8mO-rOIAw6IQ8e3iHeniiXi26X-_OP5raM-RNvid5HSNcO2TQLq2Gj6nyPQ78UOyvVjsRvnlyOd7RCXTFL_g3WOBBajv3cGrJHz3lbBR3OZTnHEc"/>
+</div>
+<h1 class="font-['Fraunces'] text-2xl font-semibold leading-tight text-[#006a63] dark:text-[#4db6ac] tracking-tight">
+                Good morning, Sarah
+            </h1>
+</div>
+<button class="material-symbols-outlined text-[#006a63] dark:text-[#4db6ac] hover:opacity-80 transition-opacity active:scale-95 duration-200" data-icon="notifications">
+            notifications
+        </button>
+</header>
+<main class="px-6 space-y-8 mt-4">
+<!-- Family Carousel -->
+<section>
+<div class="flex gap-5 overflow-x-auto no-scrollbar py-2">
+<div class="flex flex-col items-center gap-2 flex-shrink-0 group">
+<div class="w-16 h-16 rounded-full p-1 bg-gradient-to-tr from-primary to-primary-container shadow-sm group-active:scale-95 transition-transform">
+<img class="w-full h-full object-cover rounded-full border-2 border-white" data-alt="Portrait of Leo with playful expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_YzisC8z5euvfSpXyRobsdJ45yEibmrWS__SQuc4vAVSAt433TmL_5FKHXgRbdOHlNla-daAT4hlX4S-Eiej91UuGf5QgwBPZAka7CdN_-mhmMR8RSEqKIjczdDyonNeD5vaO_OOWPlfAdD_2268-1aHS2rdYC7FmKNgtPHSLyCxo9aUkEKuBxfD2OcD_x3HVS-aW-M_hAJfL646Zc8ZRp9HgBGQSaegp1dVrYhVxE7xNB79udOnZ0B7fF-GriELNFuhTCFt_DuY"/>
+</div>
+<span class="text-xs font-medium text-on-surface-variant uppercase tracking-wider">Leo</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-shrink-0 group">
+<div class="w-16 h-16 rounded-full p-1 bg-surface-container-highest group-active:scale-95 transition-transform">
+<img class="w-full h-full object-cover rounded-full border-2 border-white" data-alt="Portrait of Maya with gentle smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNY6cP8yLX5x_OXj0x1zcbcoKe9O4zt3uYqn9Jet1_F2F4reTWoYu_zdF_SHlFsjZIf-zKpa-V9jQRkS2kQVM_SoIY-vK-ZzQXIyMFMshVJLg5-dTvKjZzJiHfOFYtQfbU4sXZjg9MYBbl3D0o_VCYwz92LmONK-O2p39nSuxQO_GB3WXP75X1lec98-FmUDKvSGrpIqcMyPjYop2QHqCdG6jFklh-T_bDJ4YJD0wWe4Cow6pCMnooBfxUhsgC3sR6mfv9jMJJJec"/>
+</div>
+<span class="text-xs font-medium text-on-surface-variant uppercase tracking-wider">Maya</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-shrink-0 group">
+<div class="w-16 h-16 rounded-full p-1 bg-surface-container-highest group-active:scale-95 transition-transform">
+<img class="w-full h-full object-cover rounded-full border-2 border-white" data-alt="Portrait of Sam looking thoughtful" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJN53qv75w9aUym-5bWvo9S3xg-9iv8TVobx7W_ldiKruPBbIcG0IbcxCUrL1rpmtJonYZuM3z5zmYPHw_BmsaT-Qv6RdXKKC_sAUwokeN8CN1rB5qYXM8XQvOgFGV0YsbjIKmkrB3zCDKNy5vdhZcPXRyVl4s_mxFtNbvEENrZotctWtjIvacDlFuxQLzUXI-l_BclvNvxyEJSeZE8PpNgohj4sUbUhoKIKgw9s7OMKU0bvuhpPherHjksn2CM8ycAgaGnSKgjXY"/>
+</div>
+<span class="text-xs font-medium text-on-surface-variant uppercase tracking-wider">Sam</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-shrink-0 group">
+<div class="w-16 h-16 rounded-full border-2 border-dashed border-outline-variant flex items-center justify-center text-outline-variant group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</div>
+<span class="text-xs font-medium text-on-surface-variant uppercase tracking-wider">Add</span>
+</div>
+</div>
+</section>
+<!-- Needs Attention Alert Card -->
+<section class="bg-primary-container/10 rounded-xl p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-2xl"></div>
+<div class="flex justify-between items-start relative z-10">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined text-[20px]" data-icon="warning" style="font-variation-settings: 'FILL' 1;">warning</span>
+<h3 class="font-['Fraunces'] text-lg">Needs Attention</h3>
+</div>
+<p class="text-on-surface-variant text-sm max-w-[200px]">Maya's vaccination records are due for an update soon.</p>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-medium text-sm shadow-sm active:scale-95 transition-transform">
+                    View
+                </button>
+</div>
+</section>
+<!-- Latest Vitals Grid -->
+<section class="space-y-4">
+<h2 class="text-xl font-['Fraunces'] text-on-surface">Latest Vitals</h2>
+<div class="grid grid-cols-2 gap-4">
+<!-- Temperature -->
+<div class="bg-surface-container-lowest p-5 rounded-lg shadow-[0_4px_20px_rgba(22,29,28,0.03)] flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-full bg-secondary-container/30 flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="device_thermostat">device_thermostat</span>
+</div>
+<span class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Today</span>
+</div>
+<div class="mt-4">
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-bold font-['Fraunces'] text-primary">98.6</span>
+<span class="text-sm font-medium text-on-surface-variant">°F</span>
+</div>
+<p class="text-xs text-on-surface-variant font-medium mt-1">Temperature</p>
+</div>
+</div>
+<!-- Weight -->
+<div class="bg-surface-container-lowest p-5 rounded-lg shadow-[0_4px_20px_rgba(22,29,28,0.03)] flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed/30 flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined" data-icon="monitor_weight">monitor_weight</span>
+</div>
+<span class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">2D AGO</span>
+</div>
+<div class="mt-4">
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-bold font-['Fraunces'] text-primary">42</span>
+<span class="text-sm font-medium text-on-surface-variant">lbs</span>
+</div>
+<p class="text-xs text-on-surface-variant font-medium mt-1">Weight</p>
+</div>
+</div>
+<!-- Height (Span 2) -->
+<div class="col-span-2 bg-surface-container-lowest p-5 rounded-lg shadow-[0_4px_20px_rgba(22,29,28,0.03)] flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="straighten">straighten</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">LAST MONTH</p>
+<h3 class="text-sm font-medium text-on-surface-variant">Height</h3>
+</div>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-bold font-['Fraunces'] text-primary">41</span>
+<span class="text-sm font-medium text-on-surface-variant">in</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Log Vital Card -->
+<section>
+<button class="w-full bg-surface-container-high rounded-xl p-8 flex flex-col items-center justify-center gap-4 border-2 border-dashed border-outline-variant/30 active:scale-95 transition-transform">
+<div class="w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</div>
+<div class="text-center">
+<h3 class="font-['Fraunces'] text-lg text-primary">Log Vital</h3>
+<p class="text-sm text-on-surface-variant">Record a new health metric</p>
+</div>
+</button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 backdrop-blur-xl bg-[#f4fbf9]/85 dark:bg-teal-950/80 rounded-t-[3rem] border-t border-[#006a63]/5 shadow-[0_-4px_40px_rgba(22,29,28,0.04)]">
+<!-- HUB (Active) -->
+<div class="flex flex-col items-center justify-center bg-[#4db6ac]/20 dark:bg-[#4db6ac]/10 text-[#006a63] dark:text-[#4db6ac] rounded-full px-6 py-2 transition-all active:scale-90 duration-300 ease-out">
+<span class="material-symbols-outlined" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['Outfit'] text-[10px] uppercase tracking-widest font-bold mt-1">HUB</span>
+</div>
+<!-- TIMELINE -->
+<div class="flex flex-col items-center justify-center text-teal-800/50 dark:text-teal-200/40 px-6 py-2 hover:text-[#006a63] dark:hover:text-[#4db6ac] transition-colors">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-['Outfit'] text-[10px] uppercase tracking-widest font-bold mt-1">TIMELINE</span>
+</div>
+<!-- SETTINGS -->
+<div class="flex flex-col items-center justify-center text-teal-800/50 dark:text-teal-200/40 px-6 py-2 hover:text-[#006a63] dark:hover:text-[#4db6ac] transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Outfit'] text-[10px] uppercase tracking-widest font-bold mt-1">SETTINGS</span>
+</div>
+</nav>
+</body></html>
