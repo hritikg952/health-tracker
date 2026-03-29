@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Warm Care Health Tracker** ("Teal Care") is a family health management application. The project is currently in the **design-ready phase** — all four core screens have been designed and approved as HTML prototypes, but the actual application codebase has not been implemented yet. No package.json, build system, or source directories exist yet.
+**Warm Care Health Tracker** ("Teal Care") is a family health management mobile application built with **React Native + Expo**. The project has an active mobile codebase (`mobile/`) targeting iOS and Android. Design references exist as HTML prototypes in `AppDesign/`.
 
 ## Repository Structure
 
@@ -17,6 +17,15 @@ AppDesign/
     ├── member_dashboard_teal_care/code.html  # Screen 2: Individual member view
     ├── medical_timeline_teal_care/code.html  # Screen 3: Medical history timeline
     └── add_record_sheet_teal_care/code.html  # Screen 4: Add record form
+mobile/                                   # React Native + Expo app (primary codebase)
+├── App.tsx                               # Root component
+├── index.ts                              # Entry point
+├── app.json                              # Expo config (bundle ID: com.tealcare.healthtracker)
+├── src/                                  # Source code
+├── navigation/                           # React Navigation setup
+├── pages/                                # Screen components
+├── shared/                               # Shared components/utilities
+└── theme/                                # Design tokens and theme config
 ```
 
 The HTML prototypes can be opened directly in a browser — no build step required. They serve as the visual and structural reference for implementation.
@@ -47,12 +56,14 @@ All implementation must follow the "Digital Sanctuary" aesthetic defined in [App
 7. **Gradient CTAs**: teal → mint at 135° angle
 8. Signature component: **"Vitals Overlap"** — metric values positioned partially outside their cards
 
-### Tailwind Configuration
-The prototypes use a custom Tailwind config with:
+### Tailwind Configuration (prototypes only)
+The HTML prototypes use a custom Tailwind config with:
 - `darkMode: 'class'`
 - Custom color tokens matching the MD3 palette above
 - Custom border-radius: `DEFAULT: 1rem`, `lg: 2rem`, `xl: 3rem`
 - Plugins: `@tailwindcss/container-queries`, `@tailwindcss/forms`
+
+In the React Native app, use StyleSheet / inline styles with the same token values. Do not use Tailwind in the mobile codebase.
 
 ## Four Core Screens
 
@@ -65,8 +76,12 @@ The prototypes use a custom Tailwind config with:
 
 ## Implementation Notes
 
-When building the actual application:
-- Use mobile-first responsive design (`min-height: max(884px, 100dvh)`)
-- The prototypes use CDN-loaded Tailwind; production should use a proper build pipeline
-- Sticky headers should use `backdrop-blur` for the glass effect
+The application is **React Native + Expo only** — there is no web app. All new work goes in `mobile/`.
+
+- Run with `expo start` from the `mobile/` directory
+- Fonts are loaded via `@expo-google-fonts` (Fraunces, Outfit, Newsreader already installed)
+- Icons via `@expo/vector-icons`
+- Navigation via React Navigation (bottom tabs + native stack)
+- State management via Zustand
+- Refer to the HTML prototypes in `AppDesign/` for visual reference when building screens
 - Follow the PRD at [AppDesign/product_requirements_document.md](AppDesign/product_requirements_document.md) for feature requirements
