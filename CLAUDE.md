@@ -26,6 +26,23 @@ mobile/                                   # React Native + Expo app (primary cod
 ├── pages/                                # Screen components
 ├── shared/                               # Shared components/utilities
 └── theme/                                # Design tokens and theme config
+server/                                   # FastAPI + PostgreSQL backend
+├── main.py                               # App entry point, lifespan, router registration
+├── pyproject.toml                        # Project metadata and dependencies (managed by uv)
+├── .env                                  # Local secrets — git-ignored
+├── .env.example                          # Template for environment variables
+├── alembic.ini                           # Alembic configuration
+├── alembic/
+│   └── versions/                         # One migration file per schema change
+└── app/
+    ├── config.py                         # Pydantic Settings — reads DATABASE_URL from .env
+    ├── database.py                       # Async engine, session factory, DB type alias
+    ├── models/                           # SQLAlchemy ORM models — one file per domain
+    │   └── users.py                      # User model
+    ├── schemas/                          # Pydantic request/response schemas — one file per domain
+    │   └── users.py                      # UserCreate, UserUpdate, UserResponse
+    └── routers/                          # FastAPI route handlers — one file per domain
+        └── users.py                      # CRUD endpoints for /users
 ```
 
 The HTML prototypes can be opened directly in a browser — no build step required. They serve as the visual and structural reference for implementation.
@@ -73,6 +90,54 @@ In the React Native app, use StyleSheet / inline styles with the same token valu
 | Member Dashboard | `member_dashboard_teal_care/code.html` | Personalized metrics for one member |
 | Medical Timeline | `medical_timeline_teal_care/code.html` | Chronological health event history |
 | Add Record Sheet | `add_record_sheet_teal_care/code.html` | Data entry form for new health records |
+
+## Server (FastAPI + PostgreSQL)
+
+**Stack:** FastAPI 0.135+, Python 3.14, SQLAlchemy 2.x (async), asyncpg, Alembic, Pydantic Settings, uv
+
+### Running the server
+```bash
+cd server
+uv run uvicorn main:app --reload
+# Interactive API docs → http://localhost:8000/docs
+```
+
+### Environment variables
+Create `server/.env` (see `.env.example`):
+```
+DATABASE_URL=postgresql+asyncpg://postgres:<password>@localhost:5432/healthtracker
+```
+> The URL **must** use the `postgresql+asyncpg://` scheme — the plain `postgresql://` scheme only works with the sync driver.
+
+### Database (Alembic migrations)
+- Always run `alembic upgrade head` after pulling to apply pending migrations
+- After editing a model, run `alembic revision --autogenerate -m "description"` to generate a new migration — verify the generated file before applying
+- All `alembic` commands must be run from the `server/` directory
+
+### Code conventions
+- **One file per domain** in `models/`, `schemas/`, `routers/` — e.g. `users.py`; future domains follow the same pattern (`family_group.py`, `health_records.py`)
+- `models/__init__.py` **must re-export all models** — Alembic scans `Base.metadata` at autogenerate time; models not imported here will be invisible to migrations
+- **DB session** — inject via `db: DB` type alias (defined in `database.py`); never write `db: AsyncSession = Depends(get_db)` directly in route signatures
+- **Soft deletes** — `DELETE` routes set `is_active = False`; rows are never hard-deleted
+- **After inserts** — always call `db.flush()` then `db.refresh(obj)` before returning, so server-generated values (`created_at`, UUID) are populated on the object
+
+### Implementation status
+
+| Domain | Table(s) | Endpoints | Status |
+|--------|----------|-----------|--------|
+| Users | `users` | `POST /users` `GET /users` `GET /users/{id}` `PATCH /users/{id}` `DELETE /users/{id}` | ✅ Done |
+| Auth (OTP + JWT) | `otp_verifications` `refresh_tokens` | `/auth/send-otp` `/auth/verify-otp` `/auth/refresh` `/auth/logout` | 🔜 Next |
+| Family Groups | `family_groups` `family_members` | TBD | 🔜 Planned |
+| Health Records | `health_records` | TBD | 🔜 Planned |
+
+### Mobile ↔ Server URLs (development)
+| Client | Base URL |
+|--------|----------|
+| iOS Simulator | `http://localhost:8000` |
+| Android Emulator | `http://10.0.2.2:8000` |
+| Physical device | `http://<LAN-IP>:8000` — set via `EXPO_PUBLIC_API_URL` in mobile `.env` |
+
+---
 
 ## Implementation Notes
 
